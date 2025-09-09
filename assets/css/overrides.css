@@ -1,0 +1,1462 @@
+/* =========================
+   Μεταβλητές
+   ========================= */
+:root {
+  /* Χρώματα */
+  --brand-teal: #30948f;
+  --brand-teal-dark: #2a817c;
+  --brand-teal-darker: #236c68;
+  --brand-text: #0a2037;
+  --para: #333;
+
+  /* Hero background gradient */
+  --hero-1: #ffffff;
+  --hero-2: #deede7;
+  --hero-3: #bedacf;
+
+  /* Υψος header σε responsive */
+  --header-h-md: 72px;
+  /* ≤992px */
+  --header-h-sm: 55px;
+  /* ≤576px */
+
+  /* Gradient για κείμενο (AI & Software) */
+  --g1: #53cec8;
+  --g2: #3d827f;
+  --g3: #1a4845;
+}
+
+/* =========================
+   Γενικά
+   ========================= */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+  font-family: "Inter", sans-serif !important;
+}
+
+/* Hover χρώμα στα links του navbar */
+#mobilemenu li a:hover {
+  color: var(--brand-teal);
+}
+
+/* Κουμπί header  */
+.header__area-menubar-right-box-btn .btn-one {
+  border: 2px solid #00b894 !important;
+}
+
+.header__area-menubar-right-box-btn .btn-one:hover {
+  background-color: #019874 !important;
+  color: #fff !important;
+}
+/* =========================
+   Global Typography
+   ========================= */
+
+/* Τίτλοι */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  line-height: 1.2;
+  color: var(--brand-text);
+  margin-bottom: 16px;
+}
+
+/* Κλίμακα μεγεθών τίτλων */
+h1 {
+  font-size: clamp(32px, 4vw, 48px);
+}
+h2 {
+  font-size: clamp(28px, 3vw, 40px);
+}
+h3 {
+  font-size: clamp(24px, 2.5vw, 32px);
+}
+h4 {
+  font-size: clamp(20px, 2vw, 28px);
+}
+h5 {
+  font-size: 18px;
+}
+h6 {
+  font-size: 16px;
+}
+
+/* Παράγραφοι */
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--para);
+  margin-bottom: 20px;
+}
+
+* {
+  text-transform: none !important;
+}
+
+.section-padding {
+  padding: 60px 0 !important;
+}
+
+/* Τίτλοι */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--brand-text) !important;
+}
+
+/* Παράγραφοι */
+p,
+li,
+span {
+  color: var(--para) !important;
+}
+
+/* Links */
+a {
+  color: var(--brand-text);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--brand-teal); /* αν θες hover ίδιο με navbar */
+}
+
+/* =========================
+   Hero / Banner
+   ========================= */
+.banner__one {
+  background: linear-gradient(
+    180deg,
+    var(--hero-1) 0%,
+    var(--hero-2) 50%,
+    var(--hero-3) 100%
+  ) !important;
+  min-height: auto !important;
+  height: auto !important;
+  padding: 40px 0 0 !important;
+}
+
+/* Κείμενο τίτλου */
+.banner__one .banner__one-content h2 {
+  font-weight: 800;
+  font-size: clamp(28px, 3vw, 48px) !important;
+  line-height: 1.2 !important;
+  color: var(--brand-text);
+  margin-bottom: 20px;
+  max-width: 90%;
+}
+
+.banner__one .banner__one-content h2 span {
+  color: #2db89a;
+}
+
+.banner__one .banner__one-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--para);
+  margin-bottom: 24px;
+  max-width: 600px;
+}
+
+/* Εικόνα στήλης */
+.banner__one-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.banner__one-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Κουμπί του hero (γεμάτο, pill) */
+.banner__one .btn-two {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 28px;
+  border-radius: 9999px;
+  border: 2px solid #000;
+  background: var(--brand-teal);
+  color: #fdfdfd;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.06s ease, box-shadow 0.2s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.banner__one .btn-two:hover {
+  background: var(--brand-teal-dark);
+  color: #fdfdfd;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.banner__one .btn-two:active {
+  background: var(--brand-teal-darker);
+  transform: translateY(1px);
+}
+
+/* Σε περίπτωση που το theme βάζει pseudo-fill */
+.banner__one .btn-two::before,
+.banner__one .btn-two::after {
+  content: none !important;
+}
+
+/* Γραμμή με εικονίδιο/κειμενάκι κάτω από το κουμπί */
+.banner__one-meta {
+  margin-top: 16px;
+}
+
+/* Gradient κείμενο  */
+.hero-gradient {
+  background: linear-gradient(
+    180deg,
+    var(--g1) 0%,
+    var(--g2) 85%,
+    var(--g3) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-weight: 800;
+}
+
+/* =========================
+   About Us - Services list
+   ========================= */
+
+.about__one-content h2,
+.about__one-content p,
+.about__one-content .service span {
+  text-transform: none;
+}
+
+/* Λίστα σε 2 στήλες  */
+.about__one-content-service {
+  display: grid;
+  grid-template-columns: 28px 1fr 28px 1fr;
+  /* (icon, text) | (icon, text) */
+  column-gap: 14px;
+  /* οριζόντιο κενό */
+  row-gap: 18px;
+  /* κάθετο κενό */
+  align-items: start;
+  /* όλα ξεκινούν από πάνω */
+}
+
+.about__one-content .service {
+  display: contents;
+}
+
+/* Badge “Σχετικά με εμάς” */
+.subtitle-one {
+  background: #ceded8;
+  color: #30948f;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 12px;
+  display: inline-block;
+
+  margin-bottom: 16px;
+}
+
+/* Τίτλος */
+.about__one-content h2 {
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0b1220;
+  margin: 0 0 14px;
+}
+
+.about__one-content p {
+  margin-bottom: 40px;
+}
+
+/* Εικονίδιο */
+.about__one-content .service i {
+  width: 26px;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 30px;
+  color: #4cc9a6;
+  margin-top: 2px;
+}
+
+/* Κείμενο */
+.about__one-content .service span {
+  color: #273142;
+
+  line-height: 1.5;
+  margin: 0;
+}
+
+.about__one-image .experience-bar {
+  background: #0f2e2c !important;
+  color: #fff !important;
+}
+
+.about__one-image .experience-bar i,
+.about__one-image .experience-bar h4,
+.about__one-image .experience-bar span {
+  color: #fff !important;
+}
+
+/* Responsive: γύρνα σε 1 στήλη */
+@media (max-width: 576px) {
+  .about__one-content-service {
+    grid-template-columns: 28px 1fr;
+  }
+}
+
+/* =========================
+   πρ΄ώην blog - Services
+   ========================= */
+
+.blog__one-single-blog-image {
+  width: 100%;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.blog__one-single-blog-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog__one-single-blog-content h4 {
+  text-align: center;
+}
+
+.blog__one-single-blog-content {
+  background: #f9fbfa;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.blog__one {
+  background-color: #deede7;
+}
+
+/* ΠΑΝΩ section  */
+.blog__one {
+  background: linear-gradient(180deg, #ffffff 0%, #deede7 50%, #bedacf 100%);
+  padding-bottom: 160px; /* όσο θες να κατεβαίνει το bg */
+}
+
+/* ΚΑΤΩ section*/
+.services__one {
+  position: relative;
+  padding-top: 80px; /* “χώρος ασφαλείας” μέσα στο section */
+  background: linear-gradient(180deg, #bedacf 0%, #88bbb9 100%);
+}
+
+/*  hover στα links "Μάθε περισσότερα" */
+.blog__one-single-blog-content .btn-three:hover {
+  color: var(--brand-teal) !important;
+}
+
+.blog__one-single-blog-content .btn-three:hover i {
+  color: var(--brand-teal) !important; /* και το βελάκι */
+}
+
+.blog__one-single-blog-content {
+  border-bottom: 3px solid transparent !important; /* λίγο πιο παχύ */
+  transition: all 0.3s ease;
+}
+
+.blog__one-single-blog-content:hover {
+  border-bottom: 3px solid #30948f !important; /* πιο παχύ πράσινο */
+  box-shadow: 0 6px 12px rgba(48, 148, 143, 0.3); /* fade σκιά */
+}
+
+/* =========================
+   More Services
+   ========================= */
+
+/*  icon */
+
+.services__one-single-service-icon i {
+  font-size: 32px; /* μέγεθος icon */
+  color: #fff !important; /* λευκό icon */
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(180deg, #30948f 0%, #0f2e2c 100%);
+}
+
+/* Σιγουριά για pseudo-elements */
+.services__one-single-service-icon i::before {
+  display: block;
+  line-height: 1;
+}
+.single-service {
+  background: #f9fbfa !important;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: auto;
+  height: 100%; /* οι κάρτες σε ίδια σειρά ευθυγραμμίζονται */
+}
+
+/* Μικρότερο κενό ανάμεσα στις σειρές */
+.services__one .col-md-6.mb-4 {
+  margin-bottom: 1rem !important;
+}
+
+.services__one .single-service {
+  margin: 0 !important;
+  padding: 20px 20px 22px 20px !important;
+}
+
+/* κενό μεταξύ των καρτών */
+.services__one .col-md-6.mb-4 {
+  margin-bottom: 16px !important;
+}
+.services__one .row {
+  row-gap: 40px;
+}
+/* =========================
+  Why Us
+   ========================= */
+.work-process-area__one-single-work span {
+  background-color: #abcdc8; /* χρώμα φόντου */
+}
+
+.work-process-area__one-single-work {
+  border: 3px solid #30948f;
+}
+
+/*  πρώτο “shape” πισω απο εικόνα*/
+.shape-1 {
+  background-color: #30948f !important;
+}
+
+/* δεύτερο shape */
+.shape-2 {
+  background-color: #1e554d !important;
+}
+
+/* =========================
+   Footer
+   ========================= */
+.footer__two {
+  background: #deede7 url("assets/img/shape/footer-two-bg.png") no-repeat center
+    center;
+  background-size: cover;
+
+  .copyright__one-container-area {
+    background: #abcdc8;
+  }
+}
+
+.footer__two {
+  padding: 60px 0 0 0;
+}
+
+.footer__two-widget a {
+  display: inline-block;
+}
+
+.footer__two-widget i {
+  color: #1e554d !important;
+}
+
+.footer__two-widget a:hover i {
+  color: #00b894 !important;
+}
+
+/* --- Social buttons reset & layout --- */
+.footer__two-widget-social ul {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer__two-widget-social ul li {
+  background: transparent !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Κουμπί --- */
+.footer__two-widget-social ul li a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #1e554d;
+  border-radius: 8px;
+  background: transparent;
+  color: #1e554d;
+  text-decoration: none;
+  transition: background 0.25s, color 0.25s, border-color 0.25s, transform 0.25s;
+}
+
+/* --- Icon --- */
+.footer__two-widget-social ul li a i {
+  line-height: 1;
+  font-size: 18px;
+}
+
+/* --- Hover/Focus --- */
+.footer__two-widget-social ul li a:hover,
+.footer__two-widget-social ul li a:focus-visible {
+  border-color: #1a4845;
+  color: #fff;
+}
+
+/* --- Χρ΄ώματα στα εικονιδια των social --- */
+.footer__two-widget-social a .fa-facebook-f {
+  background: none !important;
+  color: #1877f2; /* Facebook μπλε */
+}
+.footer__two-widget-social a:hover .fa-facebook-f {
+  color: #fff !important;
+  background: #1877f2 !important;
+}
+
+.footer__two-widget-social a .fa-twitter {
+  background: none !important;
+  color: #1da1f2;
+}
+.footer__two-widget-social a:hover .fa-twitter {
+  color: #fff !important;
+  background: #1da1f2 !important;
+}
+
+.footer__two-widget-social a .fa-linkedin {
+  background: none !important;
+  color: #0077b5;
+}
+.footer__two-widget-social a:hover .fa-linkedin {
+  color: #fff !important;
+  background: #0077b5 !important;
+}
+
+.footer__two,
+.footer__two p,
+.footer__two li,
+.footer__two span,
+.footer__two a {
+  color: #1e554d !important;
+}
+
+.copyright__one-container-area {
+  justify-content: center !important;
+  text-align: center;
+}
+
+.copyright__one-left {
+  text-align: center;
+  width: 100%;
+}
+
+.copyright__one-left p {
+  margin-bottom: 0;
+}
+.footer__two-widget-subscribe a {
+  display: inline-block;
+  margin-top: 12px;
+}
+
+/* =========================
+   Scroll button
+   ========================= */
+.scroll-up .scroll-circle path {
+  stroke: #1a4845 !important;
+}
+
+.scroll-up.active-scroll::after {
+  color: #1a4845 !important;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+/* Tablet */
+@media (max-width: 991.98px) {
+  .banner__one-image {
+    justify-content: center;
+  }
+
+  .banner__one-image img {
+    width: min(90vw, 480px);
+    object-fit: contain;
+  }
+
+  /* Το πάνελ του meanmenu να ξεκινά κάτω από το header */
+  .mean-container .mean-nav {
+    margin-top: var(--header-h-md) !important;
+  }
+
+  .mean-container .mean-nav > ul {
+    max-height: calc(100vh - var(--header-h-md));
+    overflow-y: auto;
+  }
+}
+
+/*βραβεια κειμενο */
+@media (min-width: 992px) {
+  .banner__one-meta {
+    margin-top: 40px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 575.98px) {
+  .banner__one-image {
+    margin-top: 12px;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .banner__one-image img {
+    width: min(82vw, 340px);
+  }
+
+  .banner__one .btn-two {
+    padding: 12px 20px;
+  }
+
+  .banner__one-meta {
+    margin-top: 16px;
+  }
+
+  .mean-container .mean-nav {
+    margin-top: var(--header-h-sm) !important;
+  }
+
+  .mean-container .mean-nav > ul {
+    max-height: calc(100vh - var(--header-h-sm));
+  }
+}
+
+/* βραβεια κειμενο*/
+@media (max-width: 575.98px) {
+  .banner__one-meta {
+    margin-top: 16px;
+  }
+}
+
+/* =========================
+   Games
+   ========================= */
+
+/* hero section*/
+
+.banner__three-single-slide::before,
+.banner__three-single-slide::after {
+  content: none !important;
+  background: none !important;
+}
+
+.banner__three {
+  position: relative;
+  background: linear-gradient(180deg, #ffffff 0%, #deede7 100%);
+  padding: 80px 0 120px;
+}
+
+/* κείμενο στο κέντρο */
+.banner__three-content {
+  margin-bottom: 30px;
+}
+
+.banner__three-content h2 {
+  font-weight: 800;
+  font-size: clamp(28px, 5vw, 56px);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  color: #0a2037;
+}
+
+.banner__three-content p {
+  font-size: 18px;
+  color: #333;
+  opacity: 0.9;
+}
+
+/* εικόνα */
+.banner__three-image img {
+  max-width: 100%;
+  height: auto;
+  opacity: 0.85; /* διαφάνεια */
+  display: block;
+  margin: 0 auto;
+}
+
+.banner__three-content p {
+  margin-bottom: 0;
+}
+
+.banner__three-content {
+  margin-bottom: 0;
+}
+
+.banner__three {
+  padding-bottom: 0;
+}
+
+.banner__three-image img {
+  display: block;
+  margin: -100px auto 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .banner__three-content {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 0 15px;
+  }
+
+  .banner__three-image img {
+    margin: 0 auto;
+    max-width: 90%;
+  }
+}
+
+/* =========================
+ best game
+   ========================= */
+/* ===== Section wrapper ===== */
+.testimonial__three {
+  position: relative;
+  display: flow-root;
+  overflow: visible;
+  padding: 60px 20px 120px;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.6),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url("../img/games/background_1.jpg") center/cover no-repeat !important;
+}
+
+/* ===== Αριστερή «κάρτα» εικόνας ===== */
+.left-card {
+  position: relative;
+}
+
+.testimonial__three-left {
+  position: relative;
+  background: url("../img/games/squirellattackweb.jpg") center/cover no-repeat;
+  width: 100%;
+  aspect-ratio: 16/9;
+  min-height: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.testimonial__three-right {
+  background-color: #bedacf;
+  padding: 40px;
+  text-align: left;
+  border-radius: 0 20px 20px 0;
+}
+
+.blog__three-single-blog-content {
+  background: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.testimonial__three-right ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 12px 0;
+}
+.testimonial__three-right li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+.testimonial__three-right li::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ===== Κουμπί ===== */
+.btn-play {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 30px;
+  background: #1e554d;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  transition: background 0.25s, box-shadow 0.25s, transform 0.15s;
+}
+.btn-play:hover {
+  color: #fff;
+  background: #267772;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+}
+
+/* Overlay κουμπί επάνω στην εικόνα (desktop) */
+.btn-play--overlay {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  z-index: 5;
+}
+
+/* Default: κρύψε το mobile κουμπί */
+.mobile-only {
+  display: none !important;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1199.98px) {
+  /* Κρύψε overlay κουμπί και εμφάνισε mobile κουμπί */
+  .btn-play--overlay {
+    display: none !important;
+  }
+  .mobile-only {
+    display: block !important;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .mobile-only .btn-play {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .testimonial__three {
+    padding-bottom: 80px;
+  }
+
+  .testimonial__three-right {
+    padding: 24px;
+  }
+}
+
+.testimonial__three-left {
+  overflow: visible;
+}
+.btn-play--overlay {
+  z-index: 10;
+}
+.btn-play,
+.btn-play:link,
+.btn-play:visited,
+.btn-play:hover,
+.btn-play:active,
+.btn-play:focus {
+  color: #fff !important;
+  text-decoration: none;
+}
+
+/* ===== Published Games (section) ===== */
+.published-games {
+  padding: 64px 0;
+  background: linear-gradient(180deg, #cfeadd 0%, #0e907f 100%);
+}
+
+/* κεντραρισμένος τίτλος */
+.published-games__title {
+  text-align: center;
+  font-size: clamp(22px, 2.8vw, 32px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 28px;
+  color: #0a2037;
+}
+
+/* responsive grid */
+.published-games__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px 32px;
+  align-items: center;
+}
+
+/* κεντραρισμένα λογότυπα */
+.published-games__item {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  min-height: 120px;
+}
+
+.published-games__item img {
+  max-width: 85%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.12));
+  transition: transform 0.2s ease;
+}
+.published-games__item img:hover {
+  transform: scale(1.04);
+}
+
+.published-games h2 {
+  text-align: center;
+  font-size: clamp(22px, 2.8vw, 32px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 28px;
+  color: #0a2037;
+}
+
+/* breakpoints */
+@media (max-width: 991.98px) {
+  .published-games__grid {
+    grid-template-columns: repeat(2, 1fr);
+  } /* tablet: 2x3 */
+}
+@media (max-width: 575.98px) {
+  .published-games__grid {
+    grid-template-columns: 1fr;
+  } /* κινητό: 1x6 */
+  .published-games__item {
+    min-height: 100px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .published-games__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .published-games__item {
+    display: flex;
+    justify-content: center;
+  }
+
+  .published-games__item img {
+    max-width: 60%;
+    margin: 0 auto;
+  }
+
+  .published-games__title {
+    font-size: 20px;
+  }
+}
+
+/* =========================
+ΑΙ
+   ========================= */
+
+.about__two .about__two-content {
+  padding: 0 !important;
+}
+
+.about__two .row {
+  --bs-gutter-x: 1rem;
+}
+
+/* mobile  */
+@media (max-width: 575.98px) {
+  .about__two .about__two-content h2 {
+    font-size: clamp(22px, 6vw, 28px);
+    margin-bottom: 12px;
+  }
+  .about__two .about__two-content p {
+    margin-bottom: 14px;
+    line-height: 1.6;
+  }
+}
+
+/* Υπηρεσιες ΑΙ */
+.team__two-team-item img {
+  width: 100%;
+  height: 457px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Περιπτώσιες χρήσης*/
+
+.case-box {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 22px;
+}
+
+/* default gradient (1ο box) */
+.case-gradient-1 .case-left {
+  background: linear-gradient(135deg, #e8f5f3, #ffffff 70%);
+}
+
+/* άλλο gradient (2ο box) */
+.case-gradient-2 .case-left {
+  background: linear-gradient(135deg, #e8f0f9, #ffffff 70%);
+}
+
+.case-gradient-3 .case-left {
+  background: linear-gradient(135deg, #f3e8f9, #ffffff 70%);
+}
+
+/* Τίτλοι & κείμενα */
+.case-left,
+.case-right {
+  padding: 24px 28px;
+}
+.case-box h3 {
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+.case-box h4 {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.case-right ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.case-right li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 10px;
+}
+.case-right li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #10b59f;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .case-left,
+  .case-right {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+.about__two.section-padding {
+  padding-top: 60px;
+  padding-bottom: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .about__two.section-padding,
+  .team__two.section-padding {
+    padding-top: 30px !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .col-xl-4.col-lg-5 img {
+    display: block;
+    margin: 0 auto 20px;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* =========================
+   Contact
+   ========================= */
+
+/* Ενότητα */
+.contact-block {
+  padding: 60px 0;
+}
+
+/* Εικόνα */
+.contact-hero {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 12px;
+  display: block;
+}
+
+/* Επικεφαλίδα */
+.badge-soft {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 10px;
+  background: #e6f2ef;
+  color: #1b5b52;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.contact-title {
+  font-weight: 800;
+  margin: 0 0 18px;
+  color: #0b2b3a;
+}
+
+/* Λίστα στοιχείων */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 8px 0;
+}
+
+/* Εικονίδιο μέσα σε τετράγωνο */
+.contact-icon {
+  width: 64px;
+  height: 64px;
+  flex: 0 0 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #155e55;
+  box-shadow: 0 6px 16px rgba(21, 94, 85, 0.18);
+}
+
+.contact-icon i {
+  color: #fff; /* άσπρο icon */
+  font-size: 26px;
+  line-height: 1;
+}
+
+/* Κείμενα */
+.contact-text .muted {
+  margin: 0 0 4px;
+  opacity: 0.75;
+}
+
+.contact-text h4 {
+  margin: 2px 0 0;
+  font-weight: 800;
+  color: #0b2b3a;
+}
+
+.contact-text p {
+  margin: 0;
+}
+
+.contact-wrap a {
+  color: #0b2b3a;
+  text-decoration: none;
+}
+
+.contact-wrap a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .contact-hero {
+    max-width: 100%;
+    margin-bottom: 12px;
+  }
+}
+
+/* Κείμενο μέσα στο banner */
+.page__banner {
+  color: #fff;
+}
+
+.page__banner {
+  background: linear-gradient(180deg, #ffffff 0%, #deede7 100%);
+}
+
+.page__banner-shape img {
+  opacity: 0.2;
+}
+
+/* =========================
+ Πλαισιο για engagement τεχνογνωσίας
+   ========================= */
+
+.subscribe__one.three .subscribe__one-content {
+  background: linear-gradient(135deg, #30948f 0%, #1e554d 100%) !important;
+
+  padding: 40px 20px !important;
+
+  border-radius: 20px;
+}
+
+.subscribe__one.three .btn-three {
+  display: inline-block;
+  margin-top: 24px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.subscribe__one-title {
+  margin-bottom: 0;
+}
+
+/* Όλα τα κείμενα μέσα λευκά */
+.subscribe__one.three .subscribe__one-content h4,
+.subscribe__one.three .subscribe__one-content p,
+.subscribe__one.three .subscribe__one-content a {
+  color: #fff !important;
+}
+
+/* Κουμπί */
+.subscribe__one.three .btn-three {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 24px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 12px 20px;
+  border-radius: 8px;
+  transition: background 0.25s;
+}
+
+.subscribe__one.three .btn-three:hover {
+  background: rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+  color: #fff !important;
+}
+
+.subscribe__one.three {
+  margin: 30px 0;
+}
+.subscribe__one.three .btn-three:hover i {
+  color: #fff !important; /* και στο hover λευκό */
+}
+
+.about__one.section-padding {
+  padding: 60px 0 0 0 !important;
+}
+/* =========================
+ engagement τεχνογνωσίας
+   ========================= */
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.check-list li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 14px;
+  font-size: 16px;
+  color: #273142;
+  line-height: 1.6;
+}
+
+.check-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #4cc9a6; /* πράσινο χρώμα */
+  font-size: 20px; /* λίγο μεγαλύτερο */
+  font-weight: 900; /* πολύ πιο παχύ */
+  line-height: 1.4;
+}
+/* =========================
+top bar
+   ========================= */
+.top__bar .container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.top__bar-right i {
+  color: #fff !important;
+}
+/* =========================
+Βραβεία στο banner της Αρχικής
+   ========================= */
+.banner__one-meta {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: nowrap; /* Μην σπάει γραμμή σε desktop */
+}
+
+.award-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 9999px;
+  background: #bedacf;
+  border: 2px solid #019874;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0f172a;
+  white-space: nowrap;
+}
+
+.award-badge:hover {
+  background: #a8d5c2; /* λίγο πιο σκούρο στο hover */
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .banner__one-meta {
+    flex-wrap: wrap; /* σε μικρές οθόνες θα σπάει */
+    justify-content: center;
+  }
+}
+.banner__one-meta-inline {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.award-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #334155;
+  margin-right: 8px;
+  letter-spacing: 0.5px;
+}
+.banner__one-meta-inline {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Desktop / default */
+.banner__one-meta-inline {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* MOBILE:  */
+@media (max-width: 576px) {
+  .banner__one-meta-inline {
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .award-label {
+    width: 100%;
+    margin: 0 0 2px 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #334155;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .award-badge {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 10px 12px;
+    font-size: 0.88rem;
+    line-height: 1.3;
+    white-space: normal;
+  }
+
+  .award-badge i {
+    flex: 0 0 auto;
+  }
+}
+
+/* === MOBILE ≤576px: κάθετα, full-width === */
+@media (max-width: 576px) {
+  .banner__one-meta-inline {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .award-label {
+    width: 100%;
+    margin: 0 0 2px 0;
+    font-size: 0.95rem;
+  }
+  .award-badge {
+    width: 100%;
+    font-size: 0.88rem;
+    line-height: 1.3;
+    white-space: normal;
+    padding: 10px 12px;
+  }
+}
+
+/* === TABLET 577–1024px: 2 στήλες === */
+@media (min-width: 577px) and (max-width: 1024px) {
+  .banner__one-meta-inline {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 14px;
+    align-items: start;
+  }
+  .award-label {
+    grid-column: 1 / -1; /* ο τίτλος πάνω */
+    margin: 0 0 2px 0;
+    font-size: 0.95rem;
+  }
+  .award-badge {
+    width: 100%;
+    justify-content: flex-start;
+    font-size: 0.9rem;
+    white-space: normal;
+    padding: 10px 12px;
+  }
+}
