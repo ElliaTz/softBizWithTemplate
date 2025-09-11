@@ -1335,17 +1335,22 @@ top bar
 }
 
 .award-badge {
+  flex-shrink: 1;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
+  gap: 8px;
+  padding: 5px 10px;
   border-radius: 9999px;
   background: #bedacf;
   border: 2px solid #019874;
-  font-size: 0.9rem;
+  font-size: 0.94rem;
   font-weight: 600;
   color: #0f172a;
   white-space: nowrap;
+}
+
+.award-badge i {
+  font-size: 1.2rem; /* μεγαλώνει και το εικονίδιο */
 }
 
 .award-badge:hover {
@@ -1362,8 +1367,8 @@ top bar
 .banner__one-meta-inline {
   margin-top: 16px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  flex-wrap: nowrap;
+  gap: 10px;
   align-items: center;
 }
 
